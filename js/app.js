@@ -44,6 +44,8 @@ function initialize() {
   $(".results").remove();
   var template = Handlebars.compile($('#results-template').html());
   $(".container").append(template());
+  // Ocultar el mensaje de felicitaciones:
+  $(".congrats").removeClass("show");
 }
 
 // Event section:
@@ -61,10 +63,10 @@ $("#new-number").keypress(function(e) {
       $(this).val("");
 
       if (stars === randomNumber.length) {
-
+        $(".congrats").addClass("show");
       } else {
         var rowTemplate = Handlebars.compile($('#results-row-template').html());
-        $(".results > tbody").append(rowTemplate({ number: guestNumber.join(""),
+        $(".results > tbody").prepend(rowTemplate({ number: guestNumber.join(""),
                                                    points: points,
                                                    stars: stars
                                                  }));
