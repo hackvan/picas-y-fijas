@@ -1,0 +1,8 @@
+input.wrong {
+  outline-color: red;
+  background-color: #ff7f7f;
+}
+
+span.wrong {
+  color: red;
+}

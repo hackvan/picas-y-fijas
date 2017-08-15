@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Picas y Fijas</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Picas y Fijas</h1>
+    <p>Ingresa <span>cuatro digitos diferentes</span> y oprime Enter:</p>
+    <input type="number" id="new-number">
+  </div>
+  <div class="congrats">
+    <p>Ganaste</p>
+    <button class="reset">Jugar Nuevamente</button>
+  </div>
+  <!-- handlebars templates -->
+  <script id="results-template" type="text/x-handlebars-template">
+    <table class="results">
+      <thead>
+        <tr>
+          <th>Número</th>
+          <th>Picas</th>
+          <th>Fijas</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </script>
+  <script id="results-row-template" type="text/x-handlebars-template">
+    <tr>
+      <td>{{this.number}}</td>
+      <td>{{this.points}}</td>
+      <td>{{this.stars}}</td>
+    </tr>
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
+  <script src="js/app.js" charset="utf-8"></script>
+</body>
+</html>
