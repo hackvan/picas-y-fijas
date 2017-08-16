@@ -54,8 +54,10 @@ $(document).ready(function() {
 });
 
 $("#new-number").keypress(function(e) {
+
+  $("#new-number, p > span").removeClass("wrong");
+
   if (e.which == 13) {
-    $("#new-number, p > span").removeClass("wrong");
     guestNumber = $(this).val().split("");
 
     if (validateNumber(guestNumber)) {
@@ -67,9 +69,9 @@ $("#new-number").keypress(function(e) {
       } else {
         var rowTemplate = Handlebars.compile($('#results-row-template').html());
         $(".results > tbody").prepend(rowTemplate({ number: guestNumber.join(""),
-                                                   points: points,
-                                                   stars: stars
-                                                 }));
+                                                    points: points,
+                                                    stars: stars
+                                                  }));
       }
     } else {
       $("#new-number, p > span").addClass("wrong");
